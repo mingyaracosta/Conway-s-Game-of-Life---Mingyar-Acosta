@@ -1,8 +1,8 @@
 package com.mingyaracosta;
 
 public class Cell {
-
-    private State state = State.ALIVE;
+    private static final State DEFAULT_STATE = State.ALIVE;
+    private State state = DEFAULT_STATE;
 
     public Cell(State state) {
         this.state = state;

@@ -10,4 +10,16 @@ public class UniverseTest {
         Universe universe = new Universe();
         Assert.assertNotNull(universe);
     }
+
+    @Test
+    public void testGetDefaultHeightOfUniverse() {
+        Universe universe = new Universe();
+        Assert.assertEquals(10, universe.getHeight());
+    }
+
+    @Test
+    public void testGetDefaultWidthOfUniverse() {
+        Universe universe = new Universe();
+        Assert.assertEquals(10, universe.getWidth());
+    }
 }
