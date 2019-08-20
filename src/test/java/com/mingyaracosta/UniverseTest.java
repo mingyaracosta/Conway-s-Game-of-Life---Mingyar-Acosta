@@ -22,4 +22,17 @@ public class UniverseTest {
         Universe universe = new Universe();
         Assert.assertEquals(10, universe.getWidth());
     }
+
+    @Test
+    public void testSettingHeightOfUniverse() {
+        Universe universe = new Universe(9, 6);
+        Assert.assertEquals(6, universe.getHeight());
+    }
+
+    @Test
+    public void testSettingWidthOfUniverse() {
+        Universe universe = new Universe(9, 6);
+        Assert.assertEquals(9, universe.getWidth());
+    }
+
 }
