@@ -34,4 +34,12 @@ public class Universe {
     public Cell getCell(int col, int row) {
         return this.cells[col][row];
     }
+
+    public void initializeCells(State state) {
+        for (int i = 0; i < this.getHeight(); i++) {
+            for (int j = 0; j < this.getWidth(); j++) {
+                cells[i][j] = new Cell();
+            }
+        }
+    }
 }

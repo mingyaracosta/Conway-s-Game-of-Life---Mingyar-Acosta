@@ -61,4 +61,12 @@ public class UniverseTest {
         Cell notRetrievableCell = universe.getCell(5, 50);
         Assert.assertEquals(new Cell(), notRetrievableCell);
     }
+
+    @Test
+    public void testInitializeAllWithAliveCells() {
+        Universe universe = new Universe();
+        universe.initializeCells(State.ALIVE);
+        Cell actualCell = universe.getCell(0,0);
+        Assert.assertEquals(new Cell(), actualCell);
+    }
 }
