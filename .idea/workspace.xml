@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b1d6e81-85b4-44b0-a889-563a255a8234" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/game-of-life.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mingyaracosta/Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mingyaracosta/State.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mingyaracosta/Cell.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/mingyaracosta/State.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/mingyaracosta/CellTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mingyaracosta/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mingyaracosta/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/mingyaracosta/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mingyaracosta/CellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mingyaracosta/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mingyaracosta/Cell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mingyaracosta/CellTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/mingyaracosta/CellTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,9 +105,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CellTest.testIfCellIsCreatedAlive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="game-of-life" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mingyaracosta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mingyaracosta" />
+      <option name="MAIN_CLASS_NAME" value="com.mingyaracosta.CellTest" />
+      <option name="METHOD_NAME" value="testIfCellIsCreatedAlive" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CellTest" />
+        <item itemvalue="JUnit.CellTest.testIfCellIsCreatedAlive" />
         <item itemvalue="JUnit.CellTest.testIfCellIsAlive" />
       </list>
     </recent_temporary>
@@ -131,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1566268169240</updated>
       <workItem from="1566268170545" duration="1731000" />
-      <workItem from="1566270119009" duration="68000" />
+      <workItem from="1566270119009" duration="327000" />
     </task>
     <servers />
   </component>

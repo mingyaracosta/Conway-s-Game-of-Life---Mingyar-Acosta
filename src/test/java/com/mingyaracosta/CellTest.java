@@ -17,4 +17,16 @@ public class CellTest {
         cell.setState(State.DEAD);
         Assert.assertEquals(State.DEAD, cell.getState());
     }
+
+    @Test
+    public void testIfCellIsCreatedDead() {
+        Cell cell = new Cell(State.DEAD);
+        Assert.assertEquals(State.DEAD, cell.getState());
+    }
+
+    @Test
+    public void testIfCellIsCreatedAlive() {
+        Cell cell = new Cell(State.ALIVE);
+        Assert.assertEquals(State.ALIVE, cell.getState());
+    }
 }
