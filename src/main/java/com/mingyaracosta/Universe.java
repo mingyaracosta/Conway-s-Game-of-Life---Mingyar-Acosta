@@ -1,7 +1,5 @@
 package com.mingyaracosta;
 
-import java.util.List;
-
 public class Universe {
     private static final int DEFAULT_HEIGHT = 10;
     private static final int DEFAULT_WIDTH = 10;
@@ -36,10 +34,24 @@ public class Universe {
     }
 
     public void initializeCells(State state) {
-        for (int i = 0; i < this.getHeight(); i++) {
-            for (int j = 0; j < this.getWidth(); j++) {
-                cells[i][j] = new Cell(state);
+        for (int currentCol = 0; currentCol < this.getHeight(); currentCol++) {
+            for (int currentRow = 0; currentRow < this.getWidth(); currentRow++) {
+                cells[currentCol][currentRow] = new Cell(state);
             }
         }
     }
+
+    public int getCellsAliveCount() {
+        int result = 0;
+        for (int currentCol = 0; currentCol < this.getHeight(); currentCol++) {
+            for (int currentRow = 0; currentRow < this.getWidth(); currentRow++) {
+                if (cells[currentCol][currentRow].getState() == State.ALIVE) {
+                    ++result;
+                }
+            }
+        }
+        return result;
+    }
+
+//    public void
 }
