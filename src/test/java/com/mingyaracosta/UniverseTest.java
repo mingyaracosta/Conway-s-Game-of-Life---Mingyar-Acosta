@@ -63,10 +63,18 @@ public class UniverseTest {
     }
 
     @Test
-    public void testInitializeAllWithAliveCells() {
+    public void testInitializeAllUniverseWithAliveCells() {
         Universe universe = new Universe();
         universe.initializeCells(State.ALIVE);
         Cell actualCell = universe.getCell(0,0);
         Assert.assertEquals(new Cell(), actualCell);
+    }
+
+    @Test
+    public void testInitializeAllUniverseWithDeadCells() {
+        Universe universe = new Universe();
+        universe.initializeCells(State.DEAD);
+        Cell actualCell = universe.getCell(0,0);
+        Assert.assertEquals(new Cell(State.DEAD), actualCell);
     }
 }

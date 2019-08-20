@@ -38,7 +38,7 @@ public class Universe {
     public void initializeCells(State state) {
         for (int i = 0; i < this.getHeight(); i++) {
             for (int j = 0; j < this.getWidth(); j++) {
-                cells[i][j] = new Cell();
+                cells[i][j] = new Cell(state);
             }
         }
     }
