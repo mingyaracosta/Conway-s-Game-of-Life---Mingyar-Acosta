@@ -7,7 +7,9 @@
     <groupId>com.mingyaracosta</groupId>
     <artifactId>game-of-life</artifactId>
     <version>1.0.0</version>
-
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -15,6 +17,5 @@
             <version>4.12</version>
         </dependency>
     </dependencies>
-
 
 </project>

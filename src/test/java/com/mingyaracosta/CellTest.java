@@ -10,4 +10,11 @@ public class CellTest {
         Cell cell = new Cell();
         Assert.assertEquals(State.ALIVE, cell.getState());
     }
+
+    @Test
+    public void testIfCellIsDead() {
+        Cell cell = new Cell();
+        cell.setState(State.DEAD);
+        Assert.assertEquals(State.DEAD, cell.getState());
+    }
 }
