@@ -42,4 +42,10 @@ public class UniverseTest {
         Assert.assertEquals(new Cell(), universe.getCell(5, 5));
     }
 
+    @Test
+    public void testSettingADeadCell() {
+        Universe universe = new Universe();
+        universe.setCell(5, 5, new Cell(State.DEAD));
+        Assert.assertNotEquals(new Cell(), universe.getCell(5, 5));
+    }
 }

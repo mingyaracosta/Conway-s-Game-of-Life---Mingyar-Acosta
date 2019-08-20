@@ -20,7 +20,14 @@ public class Cell {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return true;
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Cell cell = (Cell) o;
+        return state == cell.state;
     }
 }
