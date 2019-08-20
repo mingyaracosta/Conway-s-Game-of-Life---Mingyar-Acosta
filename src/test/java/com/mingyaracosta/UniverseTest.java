@@ -35,4 +35,11 @@ public class UniverseTest {
         Assert.assertEquals(9, universe.getWidth());
     }
 
+    @Test
+    public void testSettingAnAliveCell() {
+        Universe universe = new Universe();
+        universe.setCell(5, 5, new Cell());
+        Assert.assertEquals(new Cell(), universe.getCell(5, 5));
+    }
+
 }

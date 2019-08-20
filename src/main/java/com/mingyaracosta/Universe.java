@@ -24,4 +24,11 @@ public class Universe {
     public int getWidth() {
         return this.width;
     }
+
+    public void setCell(int col, int row, Cell cell) {
+    }
+
+    public Cell getCell(int col, int row) {
+        return new Cell();
+    }
 }
