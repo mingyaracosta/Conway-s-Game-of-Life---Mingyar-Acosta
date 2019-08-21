@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-public class Universe /*implements Cloneable */{
+public class Universe /*implements Cloneable */ {
     private static final int DEFAULT_HEIGHT = 10;
     private static final int DEFAULT_WIDTH = 10;
 
@@ -108,7 +108,37 @@ public class Universe /*implements Cloneable */{
     }
 
     @Override
-    protected Universe clone() {
+    public Universe clone() {
         return new Universe(this);
+    }
+
+    @Override
+    public String toString() {
+        String result = "+";
+
+        for (int i = 0; i < this.getWidth(); i++) {
+            result += "--";
+        }
+        result += "-+\n";
+
+        for (int i = 0; i < this.getHeight(); i++) {
+            result += "|";
+            for (int j = 0; j < this.getWidth(); j++) {
+                if (this.cells[i][j].getState() == State.ALIVE) {
+                    result += " 1";
+                } else {
+                    result += " 0";
+                }
+            }
+            result += " |\n";
+        }
+
+        result += "+";
+        for (int i = 0; i < this.getWidth(); i++) {
+            result += "--";
+        }
+        result += "-+\n";
+
+        return result;
     }
 }

@@ -24,11 +24,25 @@ public class GameOfLifeEngine {
         this.universe = universe;
     }
 
+    public Universe tick() {
+        Universe nextGenerationUniverse = this.universe.clone();
+        for (int rowIndex = 0; rowIndex < this.universe.getHeight(); rowIndex++) {
+            for (int colIndex = 0; colIndex < this.universe.getWidth(); colIndex++) {
+                Cell currentCell = this.universe.getCell(colIndex, rowIndex);
+                int aliveNeighborsCount = countAliveNeighbors(colIndex, rowIndex);
+                Cell nextGenerationCell = getCellForNextGeneration(currentCell, aliveNeighborsCount);
+                nextGenerationUniverse.setCell(colIndex, rowIndex, nextGenerationCell);
+            }
+        }
+        this.universe = nextGenerationUniverse;
+        return this.universe;
+    }
+
     Cell getCellForNextGeneration(Cell currentCell, int aliveNeighborsCount) {
         return this.firstRule.evaluate(currentCell, aliveNeighborsCount);
     }
 
-    public int countAliveNeighbors(int colIndex, int rowIndex) {
+    int countAliveNeighbors(int colIndex, int rowIndex) {
         int minColIndex = calculateMinColIndex(colIndex);
         int maxColIndex = calculateMaxColIndex(colIndex);
         int minRowIndex = calculateMinRowIndex(rowIndex);
