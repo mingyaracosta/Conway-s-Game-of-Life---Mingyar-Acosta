@@ -4,7 +4,7 @@ import com.mingyaracosta.Cell;
 
 public interface IRule {
 
-    Cell evaluate(Cell currentState, int aliveNeighborsCount);
+    Cell evaluate(Cell currentCell, int aliveNeighborsCount);
 
     IRule nextRule();
 }
