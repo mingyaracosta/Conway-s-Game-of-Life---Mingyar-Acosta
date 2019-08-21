@@ -1,4 +1,4 @@
-package com.mingyaracosta.rules;
+package com.mingyaracosta.game.rules;
 
 public abstract class IRuleImpl implements IRule {
     private IRule nextRule;

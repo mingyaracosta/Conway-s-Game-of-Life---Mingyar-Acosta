@@ -1,4 +1,4 @@
-package com.mingyaracosta.rules;
+package com.mingyaracosta.game.rules;
 
 import com.mingyaracosta.Cell;
 import com.mingyaracosta.State;
