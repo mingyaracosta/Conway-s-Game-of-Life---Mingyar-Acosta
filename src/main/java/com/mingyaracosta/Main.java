@@ -8,7 +8,7 @@ public class Main {
     private static GameOfLifeEngine gameEngine;
 
     public static void main(String[] args) {
-        initializeInmutableDispositionUniverse();
+        initializeImmutableDispositionUniverse();
         //initializePeriodicDispositionUniverse();
         gameEngine = new GameOfLifeEngine(universe);
         System.out.println(universe);
@@ -18,12 +18,12 @@ public class Main {
         }
     }
 
-    private static void initializeInmutableDispositionUniverse() {
+    private static void initializeImmutableDispositionUniverse() {
         universe = new Universe(4, 4);
         universe.initializeCells(State.DEAD);
         universe.setCell(1, 1, new Cell(State.ALIVE));
         universe.setCell(2, 1, new Cell(State.ALIVE));
-        universe.setCell(2, 1, new Cell(State.ALIVE));
+        universe.setCell(1, 2, new Cell(State.ALIVE));
         universe.setCell(2, 2, new Cell(State.ALIVE));
     }
 
