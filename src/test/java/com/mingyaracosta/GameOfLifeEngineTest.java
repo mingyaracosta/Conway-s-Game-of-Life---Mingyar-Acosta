@@ -1,6 +1,5 @@
 package com.mingyaracosta;
 
-import com.mingyaracosta.rules.AliveCellsRule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -52,5 +51,45 @@ public class GameOfLifeEngineTest {
         Cell possibleDeadCell = gameEngine.getCellForNextGeneration(cell, 5);
         Assert.assertNotNull(possibleDeadCell);
         Assert.assertEquals(State.DEAD, possibleDeadCell.getState());
+    }
+
+    @Test
+    public void testCellShouldBorn() {
+        cell = new Cell(State.DEAD);
+        Cell possibleNewAliveCell = gameEngine.getCellForNextGeneration(cell, 3);
+        Assert.assertNotNull(possibleNewAliveCell);
+        Assert.assertEquals(State.ALIVE, possibleNewAliveCell.getState());
+    }
+
+    @Test
+    public void testCellShouldntBornWith2Neighbors() {
+        cell = new Cell(State.DEAD);
+        Cell possibleNewAliveCell = gameEngine.getCellForNextGeneration(cell, 2);
+        Assert.assertNotNull(possibleNewAliveCell);
+        Assert.assertEquals(State.DEAD, possibleNewAliveCell.getState());
+    }
+
+    @Test
+    public void testCellShouldntBornWith6Neighbors() {
+        cell = new Cell(State.DEAD);
+        Cell possibleNewAliveCell = gameEngine.getCellForNextGeneration(cell, 6);
+        Assert.assertNotNull(possibleNewAliveCell);
+        Assert.assertEquals(State.DEAD, possibleNewAliveCell.getState());
+    }
+
+    @Test
+    public void testCellShouldKeepDeadWithNoNeighborsAlive() {
+        cell = new Cell(State.DEAD);
+        Cell possibleNewAliveCell = gameEngine.getCellForNextGeneration(cell, 0);
+        Assert.assertNotNull(possibleNewAliveCell);
+        Assert.assertEquals(State.DEAD, possibleNewAliveCell.getState());
+    }
+
+    @Test
+    public void testCellShouldKeepDeadWith6NeighborsAlive() {
+        cell = new Cell(State.DEAD);
+        Cell possibleNewAliveCell = gameEngine.getCellForNextGeneration(cell, 0);
+        Assert.assertNotNull(possibleNewAliveCell);
+        Assert.assertEquals(State.DEAD, possibleNewAliveCell.getState());
     }
 }

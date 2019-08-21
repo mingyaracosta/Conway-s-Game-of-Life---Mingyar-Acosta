@@ -14,6 +14,9 @@ public class DeadCellsRule extends IRuleImpl {
             }
             return new Cell(State.DEAD);
         }
+        if (nextRule() != null) {
+            return nextRule().evaluate(currentCell, aliveNeighborsCount);
+        }
         return null;
     }
 
