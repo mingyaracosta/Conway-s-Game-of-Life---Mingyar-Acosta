@@ -37,4 +37,28 @@ public class AliveCellsRuleTest {
         Cell possibleDeadCell = rule.evaluate(cell, 2);
         Assert.assertNull(possibleDeadCell);
     }
+
+    @Test
+    public void testItShouldDieBecausOfLonelinessWith1AliveNeighbor() {
+        cell = new Cell(State.ALIVE);
+        Cell possibleDeadCell = rule.evaluate(cell, 1);
+        Assert.assertNotNull(possibleDeadCell);
+        Assert.assertEquals(State.DEAD, possibleDeadCell.getState());
+    }
+
+    @Test
+    public void testItShouldDieBecausOfLonelinessWithNoAliveNeighbor() {
+        cell = new Cell(State.ALIVE);
+        Cell possibleDeadCell = rule.evaluate(cell, 0);
+        Assert.assertNotNull(possibleDeadCell);
+        Assert.assertEquals(State.DEAD, possibleDeadCell.getState());
+    }
+
+    @Test
+    public void testItShouldDieBecausOfOverpopulationWith5AliveNeighbor() {
+        cell = new Cell(State.ALIVE);
+        Cell possibleDeadCell = rule.evaluate(cell, 5);
+        Assert.assertNotNull(possibleDeadCell);
+        Assert.assertEquals(State.DEAD, possibleDeadCell.getState());
+    }
 }

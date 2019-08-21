@@ -7,7 +7,10 @@ public class AliveCellsRule extends IRuleImpl {
     @Override
     public Cell evaluate(Cell currentCell, int aliveNeighborsCount) {
         if (currentCell.getState() == State.ALIVE) {
-            return new Cell(State.ALIVE);
+            if (aliveNeighborsCount == 2 || aliveNeighborsCount == 3) {
+                return new Cell(State.ALIVE);
+            }
+            return new Cell(State.DEAD);
         }
         return null;
     }
