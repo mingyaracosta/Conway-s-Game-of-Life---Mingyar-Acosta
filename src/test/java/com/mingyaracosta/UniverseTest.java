@@ -79,20 +79,38 @@ public class UniverseTest {
     }
 
     @Test
-    public void testCountCellsAliveBaseCase() {
+    public void testCountAliveCellsBaseCase() {
         Universe universe = new Universe(5, 5);
         universe.initializeCells(State.DEAD);
-        int aliveCellsCount = universe.getCellsAliveCount();
+        int aliveCellsCount = universe.getCellsByStateCount(State.ALIVE);
         Assert.assertEquals(0, aliveCellsCount);
     }
 
     @Test
-    public void testCountCellsAliveRegularCase() {
+    public void testCountAliveCellsRegularCase() {
         Universe universe = new Universe(5, 5);
         universe.initializeCells(State.DEAD);
         universe.setCell(1, 1, new Cell());
         universe.setCell(2, 2, new Cell());
-        int aliveCellsCount = universe.getCellsAliveCount();
+        int aliveCellsCount = universe.getCellsByStateCount(State.ALIVE);
         Assert.assertEquals(2, aliveCellsCount);
+    }
+
+    @Test
+    public void testCountDeadCellsBaseCase() {
+        Universe universe = new Universe(5, 5);
+        universe.initializeCells(State.DEAD);
+        int deadCellsCount = universe.getCellsByStateCount(State.DEAD);
+        Assert.assertEquals(25, deadCellsCount);
+    }
+
+    @Test
+    public void testCountDeadCellsRegularCase() {
+        Universe universe = new Universe(5, 5);
+        universe.initializeCells(State.DEAD);
+        universe.setCell(1, 1, new Cell());
+        universe.setCell(2, 2, new Cell());
+        int deadCellsCount = universe.getCellsByStateCount(State.DEAD);
+        Assert.assertEquals(23, deadCellsCount);
     }
 }

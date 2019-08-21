@@ -41,11 +41,11 @@ public class Universe {
         }
     }
 
-    public int getCellsAliveCount() {
+    public int getCellsByStateCount(State state) {
         int result = 0;
         for (int currentCol = 0; currentCol < this.getHeight(); currentCol++) {
             for (int currentRow = 0; currentRow < this.getWidth(); currentRow++) {
-                if (cells[currentCol][currentRow].getState() == State.ALIVE) {
+                if (cells[currentCol][currentRow].getState() == state) {
                     ++result;
                 }
             }
