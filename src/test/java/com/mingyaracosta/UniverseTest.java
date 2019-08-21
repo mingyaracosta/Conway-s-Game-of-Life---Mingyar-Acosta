@@ -137,4 +137,15 @@ public class UniverseTest {
         int aliveCellsCount = universe.getCellsByStateCount(State.ALIVE);
         Assert.assertEquals(13, aliveCellsCount);
     }
+
+    @Test
+    public void testCloneUniverse() {
+        Universe originalUniverse = new Universe(7, 3);
+        originalUniverse.initializeNRandomAliveCells(13);
+        int aliveCellsCountInOriginal = originalUniverse.getCellsByStateCount(State.ALIVE);
+        Universe clonedUniverse = originalUniverse.clone();
+        int aliveCellsCountInCloned = clonedUniverse.getCellsByStateCount(State.ALIVE);
+        Assert.assertEquals(aliveCellsCountInOriginal, aliveCellsCountInCloned);
+        Assert.assertNotSame(originalUniverse, clonedUniverse);
+    }
 }

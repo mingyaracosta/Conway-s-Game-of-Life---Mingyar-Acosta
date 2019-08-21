@@ -1,10 +1,11 @@
 package com.mingyaracosta;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-public class Universe {
+public class Universe /*implements Cloneable */{
     private static final int DEFAULT_HEIGHT = 10;
     private static final int DEFAULT_WIDTH = 10;
 
@@ -16,6 +17,15 @@ public class Universe {
 
     public Universe() {
         this.cells = new Cell[Universe.DEFAULT_HEIGHT][Universe.DEFAULT_WIDTH];
+    }
+
+    public Universe(Universe universe) {
+        this(universe.getWidth(), universe.getHeight());
+        for (int rowIndex = 0; rowIndex < this.getHeight(); rowIndex++) {
+            for (int colIndex = 0; colIndex < this.getWidth(); colIndex++) {
+                this.cells[rowIndex][colIndex] = universe.getCell(colIndex, rowIndex).clone();
+            }
+        }
     }
 
     public int getHeight() {
@@ -87,5 +97,18 @@ public class Universe {
             }
         }
         return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Universe universe = (Universe) o;
+        return Arrays.equals(cells, universe.cells);
+    }
+
+    @Override
+    protected Universe clone() {
+        return new Universe(this);
     }
 }

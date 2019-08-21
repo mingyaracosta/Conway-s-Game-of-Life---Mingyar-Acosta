@@ -11,6 +11,10 @@ public class Cell {
     public Cell() {
     }
 
+    public Cell(Cell cell) {
+        this(cell.state);
+    }
+
     public State getState() {
         return this.state;
     }
@@ -29,5 +33,10 @@ public class Cell {
         }
         Cell cell = (Cell) o;
         return state == cell.state;
+    }
+
+    @Override
+    protected Cell clone() {
+        return new Cell(this);
     }
 }

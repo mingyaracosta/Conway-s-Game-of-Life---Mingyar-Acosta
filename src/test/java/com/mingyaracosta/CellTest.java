@@ -29,4 +29,12 @@ public class CellTest {
         Cell cell = new Cell(State.ALIVE);
         Assert.assertEquals(State.ALIVE, cell.getState());
     }
+
+    @Test
+    public void testCloneCellalive() {
+        Cell originalCell = new Cell(State.ALIVE);
+        Cell clonedCell = originalCell.clone();
+        Assert.assertNotSame(originalCell, clonedCell);
+        Assert.assertEquals(originalCell, clonedCell);
+    }
 }
