@@ -26,6 +26,5 @@ jobs:
       with:
         website: oracle.com
         release: 8
-        cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
