@@ -24,7 +24,7 @@ jobs:
     - name: Set up JDK 8
       uses: oracle-actions/setup-java@v1
       with:
-        website: oracle.com
-        release: 1.8
+        website: jdk.java.net
+        release: 8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
