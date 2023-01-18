@@ -1,5 +1,7 @@
 package com.mingyaracosta;
 
+import com.mingyaracosta.testdependencypackage.Console;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,6 +10,8 @@ import java.util.Random;
 public class Universe /*implements Cloneable */ {
     private static final int DEFAULT_HEIGHT = 10;
     private static final int DEFAULT_WIDTH = 10;
+
+    private Random random = new Random();
 
     private Cell[][] cells;
 
@@ -45,6 +49,7 @@ public class Universe /*implements Cloneable */ {
     }
 
     public void initializeCells(State state) {
+//        Console.print("Printing hello from test-dependency-package");
         for (int currentRow = 0; currentRow < this.getHeight(); currentRow++) {
             for (int currentCol = 0; currentCol < this.getWidth(); currentCol++) {
                 this.cells[currentRow][currentCol] = new Cell(state);
@@ -55,7 +60,6 @@ public class Universe /*implements Cloneable */ {
     public void initializeNRandomAliveCells(int aliveCellsQuantity) {
         initializeCells(State.DEAD);
         List<Integer> compoundIndexes = this.initilizeIndexesList();
-        Random random = new Random();
         while (aliveCellsQuantity > 0) {
             int randomIndex = random.nextInt(compoundIndexes.size());
             int compoundIndex = compoundIndexes.get(randomIndex);
