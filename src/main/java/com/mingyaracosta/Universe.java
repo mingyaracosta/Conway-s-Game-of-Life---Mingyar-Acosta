@@ -1,6 +1,6 @@
 package com.mingyaracosta;
 
-import com.mingyaracosta.testdependencypackage.Console;
+//import com.mingyaracosta.testdependencypackage.Console;
 
 import java.util.Arrays;
 import java.util.LinkedList;
