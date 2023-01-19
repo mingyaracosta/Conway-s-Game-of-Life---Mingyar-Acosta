@@ -9,7 +9,6 @@ public class Main {
 
     public static void main(String[] args) {
         initializeImmutableDispositionUniverse();
-        //initializePeriodicDispositionUniverse();
         gameEngine = new GameOfLifeEngine(universe);
         System.out.println(universe);
         for (int i = 0; i < ITARATIONS_NUMBER; i++) {
@@ -25,13 +24,5 @@ public class Main {
         universe.setCell(2, 1, new Cell(State.ALIVE));
         universe.setCell(1, 2, new Cell(State.ALIVE));
         universe.setCell(2, 2, new Cell(State.ALIVE));
-    }
-
-    private static void initializePeriodicDispositionUniverse() {
-        universe = new Universe(5, 5);
-        universe.initializeCells(State.DEAD);
-        universe.setCell(2, 1, new Cell(State.ALIVE));
-        universe.setCell(2, 2, new Cell(State.ALIVE));
-        universe.setCell(2, 3, new Cell(State.ALIVE));
     }
 }
