@@ -27,6 +27,11 @@ jobs:
         distribution: 'temurin'
         java-version: '8'
         cache: 'maven'
+    - name: maven-settings-xml-action
+      uses: whelk-io/maven-settings-xml-action@v20
+      with:
+        repositories: '[{ "id": "github", "url": "https://maven.pkg.github.com/mingyaracosta/test-dependency-package", "snapshots": { "enabled": "true" } }]'
+        servers: '[{ "id": "github", "username": "minyoach@gmail.com", "password": "${{ secrets.GH_PACKAGE_TOKEN }}" }]'
     - name: Build and Run Tests with Maven
       run: mvn -V -B package --file pom.xml
     - name: Set up JDK 11

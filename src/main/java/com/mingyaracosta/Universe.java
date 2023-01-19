@@ -1,6 +1,6 @@
 package com.mingyaracosta;
 
-//import com.mingyaracosta.testdependencypackage.Console;
+import com.mingyaracosta.testdependencypackage.Console;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -49,7 +49,7 @@ public class Universe /*implements Cloneable */ {
     }
 
     public void initializeCells(State state) {
-//        Console.print("Printing hello from test-dependency-package");
+        Console.print("Printing hello from test-dependency-package");
         for (int currentRow = 0; currentRow < this.getHeight(); currentRow++) {
             for (int currentCol = 0; currentCol < this.getWidth(); currentCol++) {
                 this.cells[currentRow][currentCol] = new Cell(state);
