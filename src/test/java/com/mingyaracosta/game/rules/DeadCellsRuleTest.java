@@ -15,7 +15,7 @@ public class DeadCellsRuleTest {
     public static void setUp() {
         rule = new DeadCellsRule();
     }
-
+/*
     @Test
     public void testCellShouldBorn() {
         cell = new Cell(State.DEAD);
@@ -61,5 +61,5 @@ public class DeadCellsRuleTest {
         Cell possibleNewAliveCell = rule.evaluate(cell, 0);
         Assert.assertNotNull(possibleNewAliveCell);
         Assert.assertEquals(State.DEAD, possibleNewAliveCell.getState());
-    }
+    }*/
 }

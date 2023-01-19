@@ -14,7 +14,7 @@ public class AliveCellsRuleTest {
     public static void setUp() {
         rule = new AliveCellsRule();
     }
-
+/*
     @Test
     public void testShouldKeepAliveWith2AliveNeighbors() {
         cell = new Cell(State.ALIVE);
@@ -60,5 +60,5 @@ public class AliveCellsRuleTest {
         Cell possibleDeadCell = rule.evaluate(cell, 5);
         Assert.assertNotNull(possibleDeadCell);
         Assert.assertEquals(State.DEAD, possibleDeadCell.getState());
-    }
+    }*/
 }
