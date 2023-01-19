@@ -1,5 +1,7 @@
 package com.mingyaracosta;
 
+import java.util.Objects;
+
 public class Cell {
     private static final State DEFAULT_STATE = State.ALIVE;
     private State state = DEFAULT_STATE;
@@ -33,6 +35,11 @@ public class Cell {
         }
         Cell cell = (Cell) o;
         return state == cell.state;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(state);
     }
 
     @Override

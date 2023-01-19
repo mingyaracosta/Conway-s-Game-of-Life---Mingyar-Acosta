@@ -2,10 +2,7 @@ package com.mingyaracosta;
 
 import com.mingyaracosta.testdependencypackage.Console;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Universe /*implements Cloneable */ {
     private static final int DEFAULT_HEIGHT = 10;
@@ -109,6 +106,13 @@ public class Universe /*implements Cloneable */ {
         if (o == null || getClass() != o.getClass()) return false;
         Universe universe = (Universe) o;
         return Arrays.equals(cells, universe.cells);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(random);
+        result = 31 * result + Arrays.hashCode(cells);
+        return result;
     }
 
     @Override
